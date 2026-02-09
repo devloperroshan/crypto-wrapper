@@ -7,8 +7,6 @@ import CryptoSwift
 
 @objc public class CryptoWrapper: NSObject {
     @objc public static func sha256(_ input: String) -> String {
-        let bytes = Array(input.utf8)
-        let hash = bytes.sha256()
-        return hash.toHexString()
+        input.bytes.sha256().toHexString()
     }
 }
